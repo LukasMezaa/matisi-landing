@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { IoIosWarning, IoIosGitNetwork, IoIosAdd, IoIosRemove } from 'react-icons/io'
+import { IoIosWarning, IoIosGitNetwork } from 'react-icons/io'
 import { HiMiniBuildingOffice2 } from 'react-icons/hi2'
 
 function useScrollReveal(threshold = 0.1, rootMargin = '0px 0px -40px 0px') {
@@ -204,7 +204,6 @@ function ProcesoStepCard({
 
 const App: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
-  const [openAccordion, setOpenAccordion] = useState<'mision' | 'vision' | null>(null)
 
   useEffect(() => {
     const id = window.setInterval(() => {
