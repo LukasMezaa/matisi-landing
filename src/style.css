@@ -760,6 +760,7 @@ main {
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 50px rgba(44, 19, 127, 0.4);
+  min-height: 0; /* evita que el grid recorte en móvil */
 }
 
 .contact-form::before {
@@ -1147,6 +1148,25 @@ main {
   transform: translateY(-2px);
   border-color: var(--color-primary);
   box-shadow: 0 12px 28px rgba(74, 31, 220, 0.25);
+}
+
+@media (max-width: 900px) {
+  .partners-row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+
+  .partner-logo {
+    min-width: 120px;
+    padding: 0.65rem 1rem;
+  }
+
+  .partner-logo img {
+    max-height: 36px;
+  }
 }
 
 .section--empresas {
@@ -1641,8 +1661,13 @@ main {
     padding: 1.6rem 1.5rem;
   }
 
+  .section--cta {
+    padding-bottom: 3rem;
+  }
+
   .cta-grid {
     grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
   }
 
   .grid--4,
@@ -1703,6 +1728,18 @@ main {
   main {
     padding-inline: 1.5rem;
     margin-bottom: 0;
+  }
+
+  .section--cta {
+    padding-bottom: 3.5rem;
+  }
+
+  .cta-grid {
+    gap: 3rem;
+  }
+
+  .contact-form {
+    padding: 10px;
   }
 
   .datos-ia-header__icon {
