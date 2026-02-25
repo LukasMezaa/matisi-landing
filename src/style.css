@@ -418,7 +418,7 @@ main {
 
 .datos-ia-title {
   margin: 0 0 0.5rem;
-  font-size: 1.85rem;
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
   font-weight: 700;
   line-height: 1.25;
   display: flex;
@@ -438,6 +438,7 @@ main {
 .datos-ia-line {
   display: block;
   width: 680px;
+  max-width: 100%;
   height: 3px;
   background: #00c5e8;
   margin-bottom: 1rem;
@@ -1546,6 +1547,42 @@ main {
     display: none;
   }
 
+  .page::before {
+    width: 100vw;
+    height: 50vh;
+    min-height: 220px;
+    opacity: 0.12;
+    left: 0;
+  }
+
+  #porque-matisi::before {
+    width: 70vw;
+    height: 45vh;
+    min-height: 200px;
+    right: -5vw;
+    top: 4rem;
+    opacity: 0.14;
+  }
+
+  .section-divider {
+    width: 95vw;
+    margin-left: calc(50% - 47.5vw);
+    margin-right: calc(50% - 47.5vw);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-divider__img {
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .footer-border {
+    height: 200px;
+    width: 50%;
+    background-size: contain;
+  }
+
   .hero {
     grid-template-columns: minmax(0, 1fr);
     padding: 2.4rem 1.8rem;
@@ -1573,6 +1610,19 @@ main {
     gap: 1.25rem;
   }
 
+  .datos-ia-header__icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .datos-ia-line {
+    width: 100%;
+  }
+
+  .datos-ia-desc {
+    font-size: 0.95rem;
+  }
+
   .testimonials-layout {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1581,6 +1631,16 @@ main {
 @media (max-width: 720px) {
   main {
     padding-inline: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .datos-ia-header__icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .datos-ia-title {
+    font-size: 1.25rem;
   }
 
   .grid--4,
@@ -1590,6 +1650,34 @@ main {
 
   .pains-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page::before {
+    height: 35vh;
+    min-height: 160px;
+    opacity: 0.08;
+  }
+
+  #porque-matisi::before {
+    width: 85vw;
+    height: 35vh;
+    min-height: 150px;
+    right: -10vw;
+    top: 2rem;
+    opacity: 0.1;
+  }
+
+  .section-divider {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-divider__img {
+    height: 120px;
+  }
+
+  .footer-border {
+    display: none;
   }
 
   .footer__top {
@@ -1621,5 +1709,27 @@ main {
     bottom: 0;
     width: 4px;
     height: auto;
+  }
+
+  /* Timeline: en móvil que las tarjetas vayan una debajo de otra,
+     sin scroll horizontal ni cortes laterales */
+  .timeline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    overflow-x: visible;
+  }
+
+  .timeline__card-group {
+    width: 100%;
+  }
+
+  .timeline__card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .timeline__diagonal-arrow {
+    display: none;
   }
 }
