@@ -218,7 +218,15 @@ const App: React.FC = () => {
           <img src="/logomatisi.png" alt="Matisi Consulting" className="navbar__logo-img" />
         </a>
         <nav className="navbar__links">
-          <a href="#inicio">Inicio</a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+          >
+            Inicio
+          </a>
           <a href="#servicios">Servicios</a>
           <a href="#experiencias">Experiencias</a>
           <a href="#equipo">Equipo</a>

@@ -80,6 +80,18 @@ a {
   text-decoration: none;
 }
 
+/* Al hacer clic en enlaces del navbar, la sección no queda tapada por la barra fija */
+#inicio,
+#empresa,
+#porque-matisi,
+#servicios,
+#proceso,
+#experiencias,
+#equipo,
+#contacto {
+  scroll-margin-top: 5rem;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -1446,10 +1458,10 @@ main {
 }
 
 .section--partners {
-  margin-top: 0;
   margin-inline: 0;
   max-width: none;
   background-color: transparent;
+  margin-bottom: 60px;
 }
 
 .section--partners .section__header {
