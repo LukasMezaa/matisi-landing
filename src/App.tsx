@@ -236,7 +236,6 @@ const App: React.FC = () => {
                 src="/videomatisi.mp4"
                 playsInline
                 muted
-                loop
                 autoPlay
                 aria-label="Video presentación Matisi"
               />

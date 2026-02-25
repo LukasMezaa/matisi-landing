@@ -1547,6 +1547,10 @@ main {
     display: none;
   }
 
+  main {
+    margin-bottom: 0;
+  }
+
   .page::before {
     width: 100vw;
     height: 50vh;
@@ -1578,9 +1582,41 @@ main {
   }
 
   .footer-border {
-    height: 200px;
-    width: 50%;
-    background-size: contain;
+    display: none;
+  }
+
+  /* Timeline: en tablet también en columna, sin cortes */
+  .timeline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    overflow-x: visible;
+  }
+
+  .timeline__card-group {
+    width: 100%;
+  }
+
+  .timeline__card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .timeline__diagonal-arrow {
+    display: none;
+  }
+
+  .footer__top {
+    flex-direction: column;
+  }
+
+  .footer__cols {
+    flex-direction: column;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .hero {
@@ -1597,8 +1633,13 @@ main {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .grid--4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .grid--4,
+  .grid--2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pains-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .datos-ia-cards {
@@ -1625,6 +1666,24 @@ main {
 
   .testimonials-layout {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  #servicios .service-card {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  #servicios .service-card__image {
+    flex: 0 0 160px;
+    width: 100%;
+  }
+
+  #servicios .service-card::before {
+    left: 0;
+    top: 160px;
+    bottom: 0;
+    width: 4px;
+    height: auto;
   }
 }
 
